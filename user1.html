@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Online Bidding System</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Online Bidding System</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="product.html">Browse Items</a></li>
+          <li><a href="myBids.html">My Bid</a></li>
+          <li><a href="buyer.html">Buyer Account Settings</a></li>
+          <li><a href="supplier.html">Supplier Account Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      
+        <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Add Details</button>
+
+        <div id="id03" class="modal">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+            <label><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+            <label><b>Mobile No.</b></label>
+            <input type="number" placeholder="Enter Mobile no." name="pNo" id="pno" required>
+
+            <label>Profession</label>
+            <input type="text" name="prof" id="prof" class="input-field"  id="prof" required>
+
+            <label><b>Financial Status</b></label>
+            <input type="number" placeholder="Enter Assets" name="assets" id="assets" required>
+
+            <label><b>Buyer or Seller</b></label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+                <option>Buyer</option>
+                <option>Seller</option>
+            </select>
+
+            <div class="row">
+                <label>Address</label>
+                <div class="col-sm-6 mb-3">
+                    <label>City</label>
+                    <input type="text" name="add" id="add" class="input-field">
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <label>State</label>
+                    <input type="text" name="add" id="add" class="input-field">
+                </div>
+            </div>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn" >Submit</button>
+            </div>
+            </div>
+        </form>
+        </div>
+
+        <!--close the modal by just clicking outside of the modal-->
+        <script>
+        var modal = document.getElementById('id03');
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+            modal.style.display = "none";
+            }
+
+            var name = document.getElementById("name").value;          
+            var mobile = document.getElementById("pno").value;
+            var prof= document.getElementById("prof").value; 
+            var assets= document.getElementById("assets").value; 
+            var choose =document.getElementById("exampleFormControlSelect2").value;
+            var result = name+' '+mobile+' '+prof+' '+assets+' '+choose;
+            document.getElementById('spanResult').textContent = result;
+        }
+        </script>
+    </main>
+    <footer>
+      <p>&copy; 2023 Online Bidding System</p>
+    </footer>
+  </body>
+</html>

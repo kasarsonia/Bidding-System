@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Online Bidding System</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Online Bidding System</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="product.html">Browse Items</a></li>
+          <li><a href="myBids.html">My Bid</a></li>
+          <li><a href="buyer.html">Buyer Account Settings</a></li>
+          <li><a href="supplier.html">Supplier Account Settings</a></li>
+          <li><a href="#">Logouts</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Wnat to Bid??</h2>
+      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log in </button>
+
+      <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="container">
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <label><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <input type="checkbox"> Remember me
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <button><a href="user1.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Log in</a></button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!--close the modal by just clicking outside of the modal-->
+      <script>
+        var modal = document.getElementById('id01');
+        
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+
+      <h2>Wnat to Sell??</h2>
+      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Log in </button>
+
+        <div id="id02" class="modal">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+          <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+              <label><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+
+              <label><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <label><b>Repeat Password</b></label>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+              <input type="checkbox"> Remember me
+              <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+              <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <button href="user2.html"><a href="user2.html" class="btn btn-secondary btn-lg btn-block" aria-pressed="true">Log in</a></button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!--close the modal by just clicking outside of the modal-->
+        <script>
+          var modal = document.getElementById('id02');
+          
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        </script>
+    </main>
+    <footer>
+      <p>&copy; 2023 Online Bidding System</p>
+    </footer>
+  </body>
+</html>

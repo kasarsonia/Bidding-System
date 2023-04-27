@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insert Bid</title>
+  <link href="bid.js">
+</head>
+<body>
+  <h1>Insert Bid</h1>
+  <form action="/insert" method="POST" id="supplierForm">
+    <label for="id">S_id</label>
+    <input type="text" name="id" id="id" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <br>
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" id="amount" required>
+    <br>
+    <input type="submit" value="Submit Bid">
+  </form>
+
+  <script>
+    const supplierForm = document.getElementById('supplierForm');
+  
+    supplierForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+  
+      const formData = new FormData(supplierForm);
+  
+      const data = {
+        supplierid: formData.get('id'),
+        email: formData.get('email'),
+        amount: formData.get('amount'),
+      };
+  
+      fetch('/people', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+  
+</body>
+</html>
